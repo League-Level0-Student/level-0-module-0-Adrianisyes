@@ -13,6 +13,7 @@ PImage mustache;
 
 
 void setup() {
+  size(750,750);
   
 // 2. The code below loads your face picture into the program. 
 //     Make sure the file name is correct for the face image you saved earlier

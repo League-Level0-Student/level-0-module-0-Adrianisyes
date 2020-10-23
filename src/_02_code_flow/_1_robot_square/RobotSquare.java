@@ -14,6 +14,12 @@ public class RobotSquare {
  
     	// This code makes a new Robot
     	Robot rob = new Robot();
+    	rob.penDown();
+    	rob.setSpeed(10);
+    	int count=0;
+    	rob.move(200);
+    	rob.turn(90);
+    	count+=1; 
 
         // PEN.  Put the robot's pen down so it can draw, Use this command:
 		 /**     rob.penDown();    **/
@@ -52,6 +58,11 @@ public class RobotSquare {
     	 *      }
     	 **/
     	
+    	while( count < 4) {
+    		DRAW
+    		TURN
+    		INCREASE COUNT
+    	}
     	
     	// Run the program again. Did your Robot draw a square?
 

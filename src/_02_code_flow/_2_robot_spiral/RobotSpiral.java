@@ -12,7 +12,15 @@ public class RobotSpiral {
 	public static void main(String[] args) {
 		
 		// Create a new Robot
+		Robot rob = new Robot(); 
+		rob.penDown();
+		rob.setSpeed(100);
+		int count=0; 
 		
+		while( count < 50 ); {
+		setRandomPenColor(); 
+		rob.move(); 
+		}
 		// Set your robot's pen down 
 		
 		// SPEED. Set the robot to go at max speed (100)
@@ -39,6 +47,11 @@ public class RobotSpiral {
 		
 		// Run the program. 
 		// Check the pattern against the picture in the recipe. If it matches, you are done!
+		
+	}
+
+	private static void setRandomPenColor() {
+		// TODO Auto-generated method stub
 		
 	}
 }

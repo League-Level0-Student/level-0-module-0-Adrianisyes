@@ -6,19 +6,38 @@ import java.awt.Color;
 public class FlamingNinjaStar {
 	public static void main(String[] args) {
 
-		int baseSize = 200;		//the size of the black part of the star
+		int baseSize = 200;	//the size of the black part of the star
+		
 		int flameSize = 130;		//the length of the flaming arms
 		
 		// Make a new robot, and set it's pen down.
+		Robot rob= new Robot();
+		rob.penDown();                            
 
 		// Set the robot speed to 100
+		rob.setSpeed(100);
 		
 		// Set the robot window size to 800 x 800
-
+	    rob.setWindowSize(800, 800);
 		//  COUNT. Make another int variable to count how many times the loop has repeated
 		//         Set its start value to zero.
+		int count=0;
 		
 	       //  LOOP. Start a while loop to repeat all of the code below ONE time (we will change this later)
+		
+		while(count<25) {
+		rob.turn(45);
+		rob.move(64);
+		rob.turn(-40);
+		rob.setPenColor(Color.YELLOW);
+		rob.move(flameSize);
+		rob.turn(170);
+		rob.move(flameSize);
+		rob.turn(64);
+		rob.setPenColor(Color.black);
+		rob.move(baseSize);
+		count+=1; 
+         		
 
 			   // TURN RIGHT     Turn the robot 1/8 of a circle (hint: 360 degrees will turn a full circle)
 		
@@ -39,6 +58,7 @@ public class FlamingNinjaStar {
 				//  INCREASE COUNT. Increase the count by 1
 		
 		//  End the while loop here
+		}
 		
 		// TEST   Run the program. Check that your shape is the same as the first picture in the recipe. 
 		//        This is one arm of the ninja star.

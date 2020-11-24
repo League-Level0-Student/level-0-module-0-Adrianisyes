@@ -37,38 +37,53 @@ public class DragonFight {
 				// or a kick
 			String input = JOptionPane.showInputDialog("Attack with yell or kick?");
 				// 4. If they typed in "yell":
-			
+			if (input.equals("yell")) {
+			int randomNumber=ran.nextInt(10);
+			playerattack=randomNumber;
+			}
 					  // -- Find a random number between 0 and 10 and store it in playerAttack. Use
 					  // ran.nextInt(10)
 			
 				// 5. If they typed in "kick":
-	
+	        if (input.equals("kick")) {
+	        int randomNumber2=ran.nextInt(25);
+	        playerattack=randomNumber2;
+	        }
 					  // -- Find a random number between 0 and 25 and store it in playerAttack.
 		
 				// 6. Subtract the player attack value from the dragon's health
-
+            dragonhealth=dragonhealth-playerattack; 
+	        
 			// THE DRAGON RETALIATES
 
 				// 7. Find a random number between 0 and 35 and store it in dragonAttack
-	
+	        int randomnumber3=ran.nextInt(35);
+	        dragonattack=randomnumber3;
+	        
+            
 				// 8. Subtract the dragon attack value from the player's health
-
+	        playerhealth=playerhealth-dragonattack;
+	        
 			// ASSESS THE DAMAGE
 
 				// 9. If the player's health is less than or equal to 0, the game is over,
 				//    call the playerLost() method
-	
-			
+	        if (playerhealth<=0) {
+	        	playerLost();
+	        }
 				// 10. If the dragon's health is less than or equal to 0, the game is over,
 				//     call the dragonLost() method
-
-			
+	        if (dragonhealth<=0) {
+			dragonLost();
+	        }
 				// 11.  Pop up a message that tells us how much health the player and
 				// 		dragon have left.
-
+	        JOptionPane.showMessageDialog(null,"playerhealth "+playerhealth +"dragonhealth "+dragonhealth);
 			
 			// (Bonus: Also display the amount of health that was lost by each in this
 			// round)
+	        JOptionPane.showMessageDialog(null,"Player health lost this round is "+dragonattack +"Dragon health lost this round is "+playerattack);
+	        
 			
 
 		} // this is the end of the while loop
@@ -77,14 +92,14 @@ public class DragonFight {
 
 	static void playerLost() {
 		// 11. Tell the player that they have been defeated by the dragon and have no treasure
-
+		JOptionPane.showMessageDialog(null,"You have been defeated, NO treasure for you!");
 
 		System.exit(0);   //This code ends the program
 	}
 
 	static void dragonLost() {
 		// 12. Tell the user that the dragon has been defeated and they get a ton of gold!
-
+		JOptionPane.showMessageDialog(null,"You destroyed the dragon, ALL of the gold is yours!");
 		System.exit(0);   //This code ends the program
 	}
 
